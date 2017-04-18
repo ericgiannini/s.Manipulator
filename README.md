@@ -1,0 +1,1 @@
+#s.Manipulator - string manipulation
