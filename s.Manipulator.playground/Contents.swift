@@ -21,4 +21,16 @@ func alphabeticallySingularString(input: String) -> Bool {
 alphabeticallySingularString(input: "cannabis")
 
 
+func palindrome(input: String) -> Bool {
+    
+    var reversedArray = Array<Character>()
+    for character in input.characters {
+        reversedArray.insert(character, at:0)
+    }
+    
+    return Array(input.characters) == reversedArray
+}
 
+palindrome(input: "cannabis")
+palindrome(input: "pilot")
+palindrome(input: "rotator")
