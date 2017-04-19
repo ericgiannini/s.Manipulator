@@ -20,6 +20,12 @@ func alphabeticallySingularString(input: String) -> Bool {
 
 alphabeticallySingularString(input: "cannabis")
 
+/*:
+ 
+ Is a string a palindrome?
+ 
+ */
+
 
 func palindrome(input: String) -> Bool {
     
@@ -34,3 +40,23 @@ func palindrome(input: String) -> Bool {
 palindrome(input: "cannabis")
 palindrome(input: "pilot")
 palindrome(input: "rotator")
+
+/*: 
+ 
+ Do two strings contain the same characters?
+ 
+ */
+
+func identicalStrings(initial: String, final: String) -> Bool {
+    let initialArray = Array(initial.characters).sorted()
+    let finalArray = Array(final.characters).sorted()
+    return initialArray == finalArray
+    
+}
+
+
+identicalStrings(initial: "cannabis", final: "weed")
+
+identicalStrings(initial: " al la ", final: "l a a l")
+
+
