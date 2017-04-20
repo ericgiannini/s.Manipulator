@@ -95,17 +95,4 @@ func modeOfCharacterFromString(string: String) -> (String) {
 }
 
 
-/*:
- 
- Return the key for the maximum value of a dictionary of key value pairs.
- TODO: Refactor into a generic function.
- */
-
-func keyForMaximumValueOfStringArray(dictionary: [String:Int]) ->(String){
-    
-    let keyMaxElement = dictionary.max(by: { (a, b) -> Bool in
-        return a.0 < b.0 })
-    
-    return keyMaxElement!.key
-}
 
