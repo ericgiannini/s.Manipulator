@@ -94,5 +94,27 @@ func modeOfCharacterFromString(string: String) -> (String) {
     return greatestRecurringString!.key
 }
 
+/*: 
+ What is the mode of the most frequently occuring integer in an array of integers?
+ */
+
+func modeOfIntegerFromArrayOfIntegers(array: Array<Int>) -> (Int) {
+    
+    var counts: [Int: Int] = [:]
+    
+    for int in array {
+        counts[int] = (counts[int] ?? 0) + 1
+    }
+    
+    let greatestRecurringInteger = counts.max(by: { (a, b) -> Bool in
+        return a.1 < b.1})
+    
+    return greatestRecurringInteger!.key
+}
+
+let arrayOfIntegers = [1, 2, 3, 4, 5, 6 ,6 ,6]
+
+modeOfIntegerFromArrayOfIntegers(array: arrayOfIntegers)
+
 
 
