@@ -10,6 +10,19 @@ import UIKit
 
 /*:
  
+ Return an array of strings from a string
+ 
+ */
+
+func indexicalizedString(string: String) -> Array<String> {
+    return string.characters.map { String($0) }
+}
+
+indexicalizedString(string: "string")
+
+
+/*:
+ 
  Does a string have unique letters?
  
  */
@@ -59,4 +72,40 @@ identicalStrings(initial: "cannabis", final: "weed")
 
 identicalStrings(initial: " al la ", final: "l a a l")
 
+
+/*:
+ 
+ Return the most frequently occuring character in a string
+ 
+ */
+
+func modeOfCharacterFromString(string: String) -> (String) {
+    
+    let arrayOfStringCharacters = string.characters.map { String($0) }
+    var counts:[String:Int] = [:]
+    
+    for string in arrayOfStringCharacters {
+        counts[string] = (counts[string] ?? 0) + 1
+    }
+    
+    let greatestRecurringString = counts.max(by: { (a, b) -> Bool in
+        return a.1 < b.1})
+
+    return greatestRecurringString!.key
+}
+
+
+/*:
+ 
+ Return the key for the maximum value of a dictionary of key value pairs.
+ TODO: Refactor into a generic function.
+ */
+
+func keyForMaximumValueOfStringArray(dictionary: [String:Int]) ->(String){
+    
+    let keyMaxElement = dictionary.max(by: { (a, b) -> Bool in
+        return a.0 < b.0 })
+    
+    return keyMaxElement!.key
+}
 
